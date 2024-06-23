@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .karla-<uniquifier> {   FOR THE KARLA FONT
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+*{
+  /* background-color: rgb(235, 228, 228); */
+  background-color: #D0DDD0;
+}
+body{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  /* font-weight: <weight>; */
+  font-style: normal;
+}

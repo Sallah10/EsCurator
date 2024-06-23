@@ -1,0 +1,28 @@
+*{
+    background-color: white;
+}
+.footers{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* padding: 5px 0; */
+    padding-bottom: 10px;
+    align-items: center;
+    gap: 100px;
+    font-weight: bold;
+    font-size: large;
+}
+.paragh{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding: 0 30px;
+    margin-bottom: -20px;
+}
+.footers > img{
+    width: 5%;
+    height: 10%;
+    border-radius: 50px;
+    margin-bottom: -10px;
+    padding-left: 10px;
+}

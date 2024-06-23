@@ -1,0 +1,90 @@
+.body{
+    display: flex;
+    flex-direction: row;
+    padding: 30px 50px;
+}
+.arrow{
+    width: 35px;
+    height: 10%;
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 80px ;
+
+}
+.card{
+    border: 5px solid;
+    border-radius: 20px;
+    padding: 10px 30px;
+    max-width: 300px;
+    margin: 30px auto;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.card:hover .overlay {
+    opacity: 1;
+}
+.card:hover {
+    transform: translateY(-30px);
+}
+/* .card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+} */
+.card > h1,h2,h3,h4,img{
+    width: 100%;
+}
+.icon-btn {
+    /* background: black; */
+    padding-right: 10px;
+    padding: 0px 10px ; 
+    padding-top: 10px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: black 0.3s ease;
+    transform: translateY(170px);
+}
+
+.icon-btn:hover {
+    /* color: #ff4757; */
+    color: grey;
+}
+.icon-btn.liked {
+    color: grey;
+}
+
+.icon-btn.bookmarked {
+    color: grey;
+}
+.overlay {
+    position: absolute;
+    padding-top: 20px;
+    padding-left: 80px;
+    box-shadow: red;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.artwork-card:hover .overlay {
+    opacity: .5;
+}
