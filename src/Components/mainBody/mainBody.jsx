@@ -1,10 +1,18 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import './mainBody.css'
-import { FaHeart, FaShareAlt, FaBookmark, FaBook } from 'react-icons/fa';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { FaHeart, FaBookmark} from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css';
+import { useSwiper } from 'swiper/react';
 import axios from 'axios';
-// import { useParams } from 'react-router-dom';
 import navArrow from '../../assets/Arrow.png'
 // import painting from '../../assets/Painting 2.png'
 
@@ -15,6 +23,10 @@ const mainBody = () => {
     const [bookmarked, setBookmarked] = React.useState(false);
     const [isHovered, setIsHovered] = React.useState(false);
 
+    const handleMouseEnter = () => {
+      setIsHovered(true);
+      handleInteraction('view', true);
+    };
     const handleLike = (id) => {
       setLiked((prev) => ({ ...prev, [id]: !prev[id] }));
       handleInteraction(id, 'like');
@@ -58,100 +70,70 @@ const mainBody = () => {
         })
         .catch(error => {
           console.error('Error recording interaction:', error);
+          console.log(payload)
         });
-    };  
+    }; 
+    const SwiperNavButtons = () => {
+      const swiper = useSwiper();
+    
+      return (
+        <div className="swiper-nav-btns">
+          <button onClick={() => swiper.slidePrev()}>
+            <FontAwesomeIcon icon={faChevronLeft} />
+          </button>
+          <button onClick={() => swiper.slideNext()}>
+            <FontAwesomeIcon icon={faChevronRight} />
+          </button>
+        </div>
+      );
+    };
+
   return (
     <>
       <div className='title' >
         <h1>Featured Paintings</h1>
-        <img className='arrow' src={navArrow} alt="navArrow" />
+        <img className='arrow' src={navArrow} alt="navArrow" onClick={() => Swiper.slideNext()}/>
       </div>
       <div className='body'>
         <div 
           className='card'
-          onMouseEnter={() => handleInteraction('view')}
+          // onMouseEnter={() => handleInteraction('view', true)}
           // onMouseEnter={() => setIsHovered(true)} 
-          onMouseLeave={() => setIsHovered(false)}
+          // onMouseEnter={handleMouseEnter}
+          // onMouseLeave={() => setIsHovered(false)}
+         // onMouseEnter={() => setIsHovered(artwork.id)} 
         >
           <Swiper
-                // spaceBetween={50}
-                // slidesPerView={1}
-                // breakpoints={{
-                //     640: {
-                //         slidesPerView: 2,
-                //     },
-                //     1024: {
-                //         slidesPerView: 3,
-                //     },
-                // }}
-                // loop={true}
-                direction="horizontal" 
+                direction="horizontal"
+                modules={[Navigation, Pagination]} 
                 spaceBetween={50}
                 slidesPerView={3}
                 navigation
                 pagination={{ clickable: true }}
-                // loop
-                // loopAdditionalSlides={2}
             >
-              {/* <img src={painting} alt="Artwork" /> */}
-              {/* <SwiperSlide key={artwork.id}>
-              <div className="artwork-card">
-              <img src={artwork.image_url} alt={artwork.title} className="artwork-image" />
-              <h2>{artwork.title}</h2>
-              <p>{artwork.artist}</p>
-              <p>{new Date(artwork.date_added).toLocaleDateString()}</p> 
-            </div>
-            </SwiperSlide> */}
-              {/* {isHovered && (
-                    <div className="overlay">
-                        <button className={`icon-btn ${liked ? 'liked' : ''}`} onClick={handleLike}><FaHeart /></button>
-                        <button className="icon-btn"><FaShareAlt /></button>
-                        <button className={`icon-btn ${bookmarked ? 'bookmarked' : ''}`} onClick={handleBookmark}><FaBookmark /></button>
-                    </div>
-                )} */}
               {artworks.map((artwork) => (
                 <SwiperSlide key={artwork.id}>
-                  <div key={artwork.id} className='eachCard' 
-                  onMouseEnter={() => setIsHovered(true)} 
-                  onMouseLeave={() => setIsHovered(false)}>
+                  <div key={artwork.id} className='artwork-Card' 
+                    // onMouseEnter={() => setIsHovered(true)} 
+                    // onMouseEnter={handleMouseEnter}
+                    // onMouseLeave={() => setIsHovered(false)}
+                    >
                     <img src={artwork.art_image} alt={artwork.art_title} />
                     <h2>{artwork.art_title}</h2>
                     <h3>{artwork.artiste}</h3>
                     <h4>{new Date(new Date().toISOString()).toLocaleDateString()}</h4>
-                  </div>
-                  {/* onClick={handleLike} 
-                  onClick={handleBookmark} */}
-                  {isHovered  === artwork.id && (
                     <div className="overlay">
                       <button className={`icon-btn ${liked ? 'liked' : ''}`} onClick={() => handleLike(artwork.id)}> <FaHeart /></button>
-                      <button className="icon-btn"><FaShareAlt /></button>
                       <button className={`icon-btn ${bookmarked ? 'bookmarked' : ''}`} onClick={() => handleBookmark(artwork.id)}> <FaBookmark /></button>
                     </div>
-              )}
+                  </div>
                 </SwiperSlide> 
             ))}
+             {/* <SwiperNavButtons/> */}
           </Swiper>
+          
         </div>    
       </div> 
-      {/* <Swiper
-                spaceBetween={20}
-                slidesPerView={1}
-                breakpoints={{
-                    640: {
-                        slidesPerView: 2,
-                    },
-                    1024: {
-                        slidesPerView: 3,
-                    },
-                }}
-                loop={true}
-            >
-                {filteredArtworks.map(artwork => (
-                    <SwiperSlide key={artwork.id}>
-                        <ArtworkCard artwork={artwork} />
-                    </SwiperSlide>
-                ))}
-            </Swiper> */}
     </>
   )
 }
@@ -247,3 +229,12 @@ export default mainBody
 // };
 
 // export default App;
+ {/* onClick={handleLike} 
+                  onClick={handleBookmark} === artwork.id ///isHovered  === artwork.id/// isHovered - for hover effect*/}
+                  {/* { isHovered === artwork.id && (
+                    <div className="overlay">
+                      <button className={`icon-btn ${liked ? 'liked' : ''}`} onClick={() => handleLike(artwork.id)}> <FaHeart /></button>
+                      <button className="icon-btn"><FaShareAlt /></button>
+                      <button className={`icon-btn ${bookmarked ? 'bookmarked' : ''}`} onClick={() => handleBookmark(artwork.id)}> <FaBookmark /></button>
+                    </div>
+              )} */}

@@ -13,7 +13,7 @@ function App() {
     <>
       <Nav />
       <MainBody/>
-      <About/>
+      {/* <About/> */}
       <Footer/>
       {/* <Router>
         <div className="App">
