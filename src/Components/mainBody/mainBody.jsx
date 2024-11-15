@@ -1,8 +1,8 @@
 import React from 'react'
 import './mainBody.css'
-import { FaHeart, FaShareAlt, FaBookmark } from 'react-icons/fa';
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// import 'swiper/swiper-bundle.min.css';
+import { FaHeart, FaShareAlt, FaBookmark, FaBook } from 'react-icons/fa';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 import axios from 'axios';
 // import { useParams } from 'react-router-dom';
 import navArrow from '../../assets/Arrow.png'
@@ -13,9 +13,17 @@ const mainBody = () => {
     const [artworks, setArtworks] = React.useState([]);
     const [liked, setLiked] = React.useState(false);
     const [bookmarked, setBookmarked] = React.useState(false);
+    const [isHovered, setIsHovered] = React.useState(false);
 
-    const handleLike = () => setLiked(!liked);
-    const handleBookmark = () => setBookmarked(!bookmarked); 
+    const handleLike = (id) => {
+      setLiked((prev) => ({ ...prev, [id]: !prev[id] }));
+      handleInteraction(id, 'like');
+    };
+  
+    const handleBookmark = (id) => {
+      setBookmarked((prev) => ({ ...prev, [id]: !prev[id] }));
+      handleInteraction(id, 'bookmark');
+    };
 
     React.useEffect(() => {
       const fetchArtworks = async () => {
@@ -30,14 +38,28 @@ const mainBody = () => {
       fetchArtworks();
       // new Swiper('.swiper-container', {
       //   slidesPerView: 3,
-      //   spaceBetween: 10,
+      //   spaceBetween: 50,
       //   navigation: {
       //     nextEl: '.swiper-button-next',
       //     prevEl: '.swiper-button-prev',
       //   },
       // });
     }, []);  
-  const [isHovered, setIsHovered] = React.useState(false);
+    const handleInteraction = (id, type) => {
+      const payload = {
+        artworkId: artworks.id,
+        interactionType: type,
+        timestamp: new Date().toISOString(),
+      };
+  
+      axios.post('https://art-reccommendation-api.onrender.com/interactions', payload)
+        .then(response => {
+          console.log('Interaction recorded:', response.data);
+        })
+        .catch(error => {
+          console.error('Error recording interaction:', error);
+        });
+    };  
   return (
     <>
       <div className='title' >
@@ -47,39 +69,70 @@ const mainBody = () => {
       <div className='body'>
         <div 
           className='card'
-          onMouseEnter={() => setIsHovered(true)} 
+          onMouseEnter={() => handleInteraction('view')}
+          // onMouseEnter={() => setIsHovered(true)} 
           onMouseLeave={() => setIsHovered(false)}
         >
-          {/* <Swiper
-                spaceBetween={20}
-                slidesPerView={1}
-                breakpoints={{
-                    640: {
-                        slidesPerView: 2,
-                    },
-                    1024: {
-                        slidesPerView: 3,
-                    },
-                }}
-                loop={true}
+          <Swiper
+                // spaceBetween={50}
+                // slidesPerView={1}
+                // breakpoints={{
+                //     640: {
+                //         slidesPerView: 2,
+                //     },
+                //     1024: {
+                //         slidesPerView: 3,
+                //     },
+                // }}
+                // loop={true}
+                direction="horizontal" 
+                spaceBetween={50}
+                slidesPerView={3}
+                navigation
+                pagination={{ clickable: true }}
+                // loop
+                // loopAdditionalSlides={2}
             >
-            <SwiperSlide> */}
               {/* <img src={painting} alt="Artwork" /> */}
-              <img src={artworks.art_image} alt={artworks.title} />
-              {isHovered && (
+              {/* <SwiperSlide key={artwork.id}>
+              <div className="artwork-card">
+              <img src={artwork.image_url} alt={artwork.title} className="artwork-image" />
+              <h2>{artwork.title}</h2>
+              <p>{artwork.artist}</p>
+              <p>{new Date(artwork.date_added).toLocaleDateString()}</p> 
+            </div>
+            </SwiperSlide> */}
+              {/* {isHovered && (
                     <div className="overlay">
                         <button className={`icon-btn ${liked ? 'liked' : ''}`} onClick={handleLike}><FaHeart /></button>
-                        {/* <button className="icon-btn"><FaShareAlt /></button> */}
+                        <button className="icon-btn"><FaShareAlt /></button>
                         <button className={`icon-btn ${bookmarked ? 'bookmarked' : ''}`} onClick={handleBookmark}><FaBookmark /></button>
                     </div>
-                )}
-              <h2>Art Name</h2>
-              <h3>Artists Name</h3>
-              <h4>Date</h4>
-            {/* </SwiperSlide>
-          </Swiper> */}
+                )} */}
+              {artworks.map((artwork) => (
+                <SwiperSlide key={artwork.id}>
+                  <div key={artwork.id} className='eachCard' 
+                  onMouseEnter={() => setIsHovered(true)} 
+                  onMouseLeave={() => setIsHovered(false)}>
+                    <img src={artwork.art_image} alt={artwork.art_title} />
+                    <h2>{artwork.art_title}</h2>
+                    <h3>{artwork.artiste}</h3>
+                    <h4>{new Date(new Date().toISOString()).toLocaleDateString()}</h4>
+                  </div>
+                  {/* onClick={handleLike} 
+                  onClick={handleBookmark} */}
+                  {isHovered  === artwork.id && (
+                    <div className="overlay">
+                      <button className={`icon-btn ${liked ? 'liked' : ''}`} onClick={() => handleLike(artwork.id)}> <FaHeart /></button>
+                      <button className="icon-btn"><FaShareAlt /></button>
+                      <button className={`icon-btn ${bookmarked ? 'bookmarked' : ''}`} onClick={() => handleBookmark(artwork.id)}> <FaBookmark /></button>
+                    </div>
+              )}
+                </SwiperSlide> 
+            ))}
+          </Swiper>
         </div>    
-      </div>  
+      </div> 
       {/* <Swiper
                 spaceBetween={20}
                 slidesPerView={1}
