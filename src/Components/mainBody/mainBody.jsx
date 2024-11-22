@@ -16,6 +16,8 @@ import axios from 'axios';
 import navArrow from '../../assets/Arrow.png'
 // import painting from '../../assets/Painting 2.png'
 
+//To-DO - work on the artworks display and onhover with the pages below also tonight
+
 // https://art-reccommendation-api.onrender.com/art_works/?format=api'
 const mainBody = () => {
     const [artworks, setArtworks] = React.useState([]);
