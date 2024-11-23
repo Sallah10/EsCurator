@@ -3,8 +3,8 @@ import Nav from './Components/Nav/nav'
 import MainBody from './Components/mainBody/mainBody'
 import About from './Components/About/about'
 import Footer from './Components/Footer/footer'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ArtistProfile from './Components/ArtistProfile/ArtistProfile'
+// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// import ArtistProfile from './Components/ArtistProfile/ArtistProfile'
 import './App.css'
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
     <>
       <Nav />
       <MainBody/>
-      {/* <About/> */}
+      <About/>
       <Footer/>
       {/* <Router>
         <div className="App">

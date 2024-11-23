@@ -1,42 +1,41 @@
-.body{
-    display: flex;
-    flex-direction: row;
-    padding: 30px 50px;
-    /* flex-wrap: wrap;
+.body {
+  display: flex;
+  flex-direction: row;
+  padding: 2em 3em;
+  /* flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     width: 100%;
     margin: auto; */
 }
-.arrow{
-    width: 35px;
-    height: 10%;
+.arrow {
+  width: 35px;
+  height: 10%;
 }
-.title{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 80px ;
-
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7em 4em;
 }
 .card {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    width: 100%;
-    margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2em;
+  width: 100%;
+  margin: auto;
 }
 
 .artwork-Card {
-    position: relative;
-    overflow: hidden;
-    width: 300px; /* Set a fixed width */
-    border-radius: 20px;
-    border: 5px solid transparent;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(31, 29, 29, 0.1);
-    /* transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; */
+  position: relative;
+  overflow: hidden;
+  max-width: 300px; /* Set a fixed width */
+  border-radius: 20px;
+  border: 0.3em solid transparent;
+  text-align: center;
+  box-shadow: 0 0.1em 0.3em rgba(31, 29, 29, 0.1);
+  /* transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; */
 }
 
 /* .artwork-Card:hover {
@@ -46,69 +45,60 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 } */
 .artwork-Card img {
-    width: 100%;
-    height: auto; /* Set a fixed height */
-    object-fit: cover; /* This will ensure the image covers the area without distortion */
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    /* transition: transform 0.3s ease-in-out; */
+  width: 100%;
+  height: auto; /* Set a fixed height */
+  object-fit: cover; /* This will ensure the image covers the area without distortion */
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  /* transition: transform 0.3s ease-in-out; */
 }
 .artwork-Card:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 .overlay {
-    position: absolute; 
-    top: 0;
-    left: 0;
-    /* right: 0; */
-    /* bottom: 0; */
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    /* justify-content: space-between; */
-    gap: 2px;
-    align-items: center;
-    padding-left: 10px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    /* z-index: 100; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 0.2em;
+  align-items: center;
+  padding-left: 0.6em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  /* z-index: 100; */
 }
 
 .artwork-Card:hover .overlay {
-    opacity: 1;
-    transform: scale(1.2);
+  opacity: 1;
+  transform: scale(1.2);
 }
 
 .icon-btn {
-    background: none;
-    /* display: inline-block; */
-    /* background-color: rgba(255, 255, 255, 0.3); */
-    border: none;
-    color: grey;
-    font-size: 24px;
-    cursor: pointer;
-    /* transform: translateY(-10px); */
-    /* z-index: 11; */
-    transition: transform 0.3s ease, color 0.3s ease;
-    /* margin: 0 10px; */
-    /* padding: 10px; */
-      /* padding-right: 10px;
-    padding: 0px 10px ;  */
-    margin-top: 340px;
-    /* padding-top: 360px; */
-    width: 100%;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+  background: none;
+  border: none;
+  color: grey;
+  font-size: 1.5rem;
+  cursor: pointer;
+  /* transform: translateY(-10px); */
+  /* z-index: 11; */
+  transition: transform 0.3s ease, color 0.3s ease;
+  margin-top: 340px;
+  width: 100%;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 
 .artwork-Card:hover .icon-btn {
-    display: inline-block; 
+  display: inline-block;
 }
 .icon-btn:hover {
-    transform: scale(1.2);
-    color: black;
-    /* color: #ddd; */
+  transform: scale(1.2);
+  color: black;
+  /* color: #ddd; */
 }
 /* 
 .icon-btn.liked,
@@ -116,16 +106,15 @@
     color: grey;
 } */
 .swiper-nav-btns {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 150px;
-    
-  }
-.swiper-nav-btns > button{
-    color: white;
-    background-color: black;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 150px;
 }
-    
+.swiper-nav-btns > button {
+  color: white;
+  background-color: black;
+}
+
 .swiper-button-next:after,
 .swiper-button-prev:after {
   /* font-family: 'Your Icon Font'; */
@@ -134,29 +123,28 @@
   background-color: none;
   margin-top: 150px;
   color: black;
-  
 }
 
 .swiper-button-next:after {
-  content: '\f054'; /* FontAwesome right arrow icon */
+  content: "\f054"; /* FontAwesome right arrow icon */
 }
 
 .swiper-button-prev:after {
-  content: '\f053'; /* FontAwesome left arrow icon */
+  content: "\f053"; /* FontAwesome left arrow icon */
 }
 .swiper-pagination-bullet {
-    /* width: 12px;
+  /* width: 12px;
     height: 12px; */
-    background-color: black;
-    /* opacity: 0.5;
+  background-color: black;
+  /* opacity: 0.5;
     margin-top: -500px; */
-  }
-  
-  /* .swiper-pagination-bullet-active {
+}
+
+/* .swiper-pagination-bullet-active {
     opacity: 1;
   } */
-  
-  .swiper-button-next,
-  .swiper-button-prev {
-    color: #000;
-  }
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #000;
+}

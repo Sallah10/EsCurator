@@ -1,6 +1,8 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import logo from '../../assets/5.png'
 import search from '../../assets/Union.png'
+// eslint-disable-next-line no-unused-vars
 import { Link } from 'react-router-dom';
 import './nav.css'
 

@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import './about.css'
 
@@ -5,7 +6,7 @@ import './about.css'
 const about = () => {
   return (
     <>
-      <div className='body'>
+      <div className='about'>
         <h1>About EsCurator</h1>
         <h2>Where Art Meets Discovery</h2>
         <p>
@@ -19,7 +20,7 @@ const about = () => {
               Imagine having a knowledgeable art expert whispering recommendations in your ear, pointing you towards hidden gems and artists who resonate with your unique taste. <br /> That's the magic of our innovative <span className='recommender'>recommendation system</span>, it's not just a search engine; it's your personal curator, fueled by cutting-edge technology. 
             </p>
           </div>
-          <div className='segment1'>
+          <div className='segment'>
             <h3>Join the Conversation</h3>
             <p>Art thrives on connection. Share your discoveries, delve into discussions around the artwork, and connect with fellow art enthusiasts. <br /> Together, let's create a space where artistic exploration flourishes.</p>
           </div>
