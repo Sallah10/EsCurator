@@ -22,7 +22,7 @@ h3 {
   font-size: 1.5rem;
 }
 p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .segments {
@@ -31,6 +31,7 @@ p {
   gap: 5em;
   margin-right: auto;
 }
+
 .segment {
   display: flex;
   flex-direction: column;
@@ -39,18 +40,22 @@ p {
 .segment p {
   text-align: justify;
 }
-.segment2 {
-  margin: auto;
+
+.segment h3 {
   display: flex;
+  align-self: center;
+}
+.segment2 {
+  display: flex;
+  gap: 1em;
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  margin-top: 2em;
+  margin-top: 1em;
 }
-/* .body h2 {
-  display: flex;
-  justify-content: center;
-} */
+.segment2 p {
+  padding: 0 4em;
+}
 span {
   color: cornflowerblue;
 }
@@ -60,8 +65,7 @@ span {
 ul {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  align-self: center;
+  padding: 0 15em;
   justify-content: space-between;
   gap: 1em;
 }
@@ -94,3 +98,53 @@ ul {
     padding: 0rem 30rem;
     gap: none;
   } */
+
+@media (max-width: 1070px) {
+  ul {
+    padding: 0 5em;
+  }
+}
+@media (max-width: 880px) {
+  .segments {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    text-align: justify;
+  }
+}
+@media (max-width: 730px) {
+  .about > p {
+    text-align: justify;
+    padding: 0 0em;
+  }
+
+  ul {
+    padding: 0 1em;
+  }
+  .segment2 p {
+    padding: 0 1em;
+  }
+}
+@media (max-width: 510px) {
+  .about h2 {
+    text-align: center;
+  }
+  .segment2 h3 {
+    display: flex;
+    align-self: center;
+  }
+}
+@media (max-width: 370px) {
+  .segment h3 {
+    text-align: center;
+  }
+  .segment p {
+    text-align: justify;
+    font-size: 0.9rem;
+    font-weight: 300;
+  }
+  .segment2 p {
+    padding: 0 0em;
+    text-align: justify;
+  }
+}
