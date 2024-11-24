@@ -23,7 +23,7 @@
   flex-wrap: wrap;
   justify-content: center;
   /* gap: 1.2em; */
-  width: 100%;
+  max-width: 100%;
   margin: 0;
 }
 
@@ -46,7 +46,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 } */
 .artwork-Card img {
-  width: 100%;
+  max-width: 100%;
   height: auto; /* Set a fixed height */
   object-fit: cover; /* This will ensure the image covers the area without distortion */
   border-top-left-radius: 15px;
@@ -137,10 +137,15 @@
   /* width: 12px;
     height: 12px; */
   background-color: black;
+  margin: 0;
   /* opacity: 0.5;
     margin-top: -500px; */
 }
-
+.swiper {
+  padding: 0;
+  margin: 0 auto; /* Center align if needed */
+  position: relative; /* Helps with positioning child elements */
+}
 /* .swiper-pagination-bullet-active {
     opacity: 1;
   } */
@@ -148,4 +153,14 @@
 .swiper-button-next,
 .swiper-button-prev {
   color: #000;
+}
+
+.swiper-wrapper {
+  padding: 0;
+  margin: 0;
+}
+
+.swiper-slide {
+  padding: 0 !important;
+  margin: 0 !important;
 }
