@@ -112,6 +112,23 @@ const mainBody = () => {
                 slidesPerView={3}
                 navigation
                 pagination={{ clickable: true }}
+                breakpoints={{
+                  // when the viewport is >= 640px
+                  640: {
+                    slidesPerView: 2, // Show 2 slides
+                    spaceBetween: 20,
+                  },
+                  // when the viewport is >= 768px
+                  768: {
+                    slidesPerView: 3, // Show 3 slides
+                    spaceBetween: 30,
+                  },
+                  // when the viewport is < 640px
+                  0: {
+                    slidesPerView: 1, // Show 1 slide
+                    spaceBetween: 10,
+                  },
+                }}
             >
               {artworks.map((artwork) => (
                 <SwiperSlide key={artwork.id}>
