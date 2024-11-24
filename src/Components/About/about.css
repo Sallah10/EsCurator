@@ -135,13 +135,21 @@ ul {
   }
 }
 @media (max-width: 370px) {
+  h1 {
+    text-align: center;
+  }
   .segment h3 {
     text-align: center;
   }
-  .segment p {
+
+  .segment1 :nth-child(2) {
+    text-align: center;
+  }
+  p {
     text-align: justify;
     font-size: 0.9rem;
-    font-weight: 300;
+    font-weight: 400;
+    color: black;
   }
   .segment2 p {
     padding: 0 0em;

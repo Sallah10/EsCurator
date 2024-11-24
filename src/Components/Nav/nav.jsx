@@ -29,7 +29,7 @@ const nav = () => {
                     className="search-input"
                 />
                 <img src={search} alt="search button" />
-            </div>
+          </div>
           
         </div>
       </nav>

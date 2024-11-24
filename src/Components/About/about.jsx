@@ -14,7 +14,7 @@ const about = () => {
         </p>
         <h2>What does EsCurator have to offer?</h2>
         <div className='segments'>
-          <div className='segment'>
+          <div className='segment segment1'>
             <h3>Your Personalized Curator</h3>
             <p>
               Imagine having a knowledgeable art expert whispering recommendations in your ear, pointing you towards hidden gems and artists who resonate with your unique taste. <br /> That's the magic of our innovative <span className='recommender'>recommendation system</span>, it's not just a search engine; it's your personal curator, fueled by cutting-edge technology. 
