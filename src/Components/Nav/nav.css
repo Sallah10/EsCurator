@@ -57,7 +57,7 @@ nav {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border: #ccc solid 0;
 }
-@media (max-width: 720px) {
+@media (max-width: 770px) {
   .navbar a {
     display: none;
   }

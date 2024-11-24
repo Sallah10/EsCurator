@@ -4,6 +4,8 @@
 .footers {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  margin-top: 1em;
   gap: 2em;
   margin: 0;
   padding: 0;
@@ -24,7 +26,7 @@
   font-weight: 500;
 }
 .footers > img {
-  width: 30%;
+  max-width: 100px;
   height: 10%;
   margin: 0;
   padding: 0;

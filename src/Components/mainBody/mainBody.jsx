@@ -16,8 +16,6 @@ import axios from 'axios';
 import navArrow from '../../assets/Arrow.png'
 // import painting from '../../assets/Painting 2.png'
 
-//To-DO - work on the artworks display and onhover with the pages below also tonight
-
 // https://art-reccommendation-api.onrender.com/art_works/?format=api'
 const mainBody = () => {
     const [artworks, setArtworks] = React.useState([]);
@@ -50,14 +48,6 @@ const mainBody = () => {
       };
   
       fetchArtworks();
-      // new Swiper('.swiper-container', {
-      //   slidesPerView: 3,
-      //   spaceBetween: 50,
-      //   navigation: {
-      //     nextEl: '.swiper-button-next',
-      //     prevEl: '.swiper-button-prev',
-      //   },
-      // });
     }, []);  
     const handleInteraction = (id, type) => {
       const payload = {
@@ -99,11 +89,6 @@ const mainBody = () => {
       <div className='body'>
         <div 
           className='card'
-          // onMouseEnter={() => handleInteraction('view', true)}
-          // onMouseEnter={() => setIsHovered(true)} 
-          // onMouseEnter={handleMouseEnter}
-          // onMouseLeave={() => setIsHovered(false)}
-         // onMouseEnter={() => setIsHovered(artwork.id)} 
         >
           <Swiper
                 direction="horizontal"
@@ -132,11 +117,9 @@ const mainBody = () => {
             >
               {artworks.map((artwork) => (
                 <SwiperSlide key={artwork.id}>
-                  <div key={artwork.id} className='artwork-Card' 
-                    // onMouseEnter={() => setIsHovered(true)} 
-                    // onMouseEnter={handleMouseEnter}
-                    // onMouseLeave={() => setIsHovered(false)}
-                    >
+                  <div key={artwork.id} 
+                    className='artwork-Card' 
+                  >
                     <img src={artwork.art_image} alt={artwork.art_title} />
                     <h2>{artwork.art_title}</h2>
                     <h3>{artwork.artiste}</h3>
@@ -148,7 +131,6 @@ const mainBody = () => {
                   </div>
                 </SwiperSlide> 
             ))}
-             {/* <SwiperNavButtons/> */}
           </Swiper>
           
         </div>    
@@ -158,6 +140,12 @@ const mainBody = () => {
 }
 
 export default mainBody
+
+{/* <SwiperNavButtons/> */}
+// onMouseEnter={() => setIsHovered(true)} 
+                    // onMouseEnter={handleMouseEnter}
+                    // onMouseLeave={() => setIsHovered(false)}
+                    
 // import React, { useEffect, useState } from 'react';
 // import axios from 'axios';
 // import { Swiper, SwiperSlide } from 'swiper/react';
