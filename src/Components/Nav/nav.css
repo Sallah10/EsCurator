@@ -24,7 +24,7 @@ nav {
 } */
 .logo img {
   border-radius: 50px;
-  width: 30%;
+  max-width: 100px;
   height: 20%;
 }
 .search-container > img {
@@ -56,4 +56,29 @@ nav {
   width: 300px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border: #ccc solid 0;
+}
+@media (max-width: 720px) {
+  .navbar a {
+    display: none;
+  }
+  .search-input {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 400px) {
+  .search-container img {
+    display: none;
+  }
+  .search-input {
+    max-width: 150px;
+  }
+}
+@media (max-width: 370px) {
+  .navbar {
+    padding: 0;
+  }
+  .search-container img {
+    margin: 0;
+  }
 }

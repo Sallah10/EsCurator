@@ -1,4 +1,3 @@
-import React from 'react'
 import './footer.css'
 import logo from '../../assets/5.png'
 
@@ -7,14 +6,16 @@ const footer = () => {
     <>
       <div className='footers'>
         <img src={logo} alt="logo" />
-        <div className='paragh'>
-          <p className='bg-black-700'> &copy; 2024 ESCURATOR</p>
-          <p> Terms and conditon </p>
-        </div>
-      </div>
-      
+        <h3> &copy; 2024 ESCURATOR</h3>
+        <h3> Terms and conditon </h3>
+      </div>  
     </>
   )
 }
 
 export default footer
+
+{/* <div className='paragh'>
+<h3> &copy; 2024 ESCURATOR</h3>
+<h3> Terms and conditon </h3>
+</div> */}
