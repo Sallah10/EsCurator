@@ -34,12 +34,6 @@
   /* transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; */
 }
 
-/* .artwork-Card:hover {
-    transform: translateY(-10px);
-    width: auto;
-    border-color: #333;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-} */
 .artwork-Card img {
   max-width: 100%;
   height: auto; /* Set a fixed height */
@@ -101,16 +95,6 @@
   transform: scale(1.2);
   color: black;
 }
-/* 
-.icon-btn.liked,
-.icon-btn.bookmarked {
-    color: grey;
-} */
-/* .swiper-nav-btns {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 150px;
-} */
 .swiper-nav-btns > button {
   color: white;
   background-color: black;
@@ -118,8 +102,6 @@
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  /* font-family: 'Your Icon Font'; */
-  /* font-size: 24px; */
   background: none;
   background-color: none;
   margin-top: 150px;
@@ -142,14 +124,6 @@
   margin: 0 auto; /* Center align if needed */
   position: absolute; /* Helps with positioning child elements */
 }
-/* .swiper-pagination-bullet-active {
-    opacity: 1;
-  } */
-
-/* .swiper-button-next,
-.swiper-button-prev {
-  color: #000;
-} */
 
 .swiper-wrapper {
   padding: 0;
@@ -160,3 +134,30 @@
   padding: 0 !important;
   margin: 0 !important;
 }
+
+/* .swiper-pagination-bullet-active {
+    opacity: 1;
+  } */
+
+/* .swiper-button-next,
+.swiper-button-prev {
+  color: #000;
+} */
+
+/* 
+.icon-btn.liked,
+.icon-btn.bookmarked {
+    color: grey;
+} */
+/* .swiper-nav-btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 150px;
+} */
+
+/* .artwork-Card:hover {
+    transform: translateY(-10px);
+    width: auto;
+    border-color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+} */
