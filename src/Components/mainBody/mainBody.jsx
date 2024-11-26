@@ -65,21 +65,6 @@ const mainBody = () => {
           console.log(payload)
         });
     }; 
-    const SwiperNavButtons = () => {
-      const swiper = useSwiper();
-    
-      return (
-        <div className="swiper-nav-btns">
-          <button onClick={() => swiper.slidePrev()}>
-            <FontAwesomeIcon icon={faChevronLeft} />
-          </button>
-          <button onClick={() => swiper.slideNext()}>
-            <FontAwesomeIcon icon={faChevronRight} />
-          </button>
-        </div>
-      );
-    };
-
   return (
     <>
       <div className='title' >
@@ -140,6 +125,22 @@ const mainBody = () => {
 }
 
 export default mainBody
+
+
+    // const SwiperNavButtons = () => {
+    //   const swiper = useSwiper();
+    
+    //   return (
+    //     <div className="swiper-nav-btns">
+    //       <button onClick={() => swiper.slidePrev()}>
+    //         <FontAwesomeIcon icon={faChevronLeft} />
+    //       </button>
+    //       <button onClick={() => swiper.slideNext()}>
+    //         <FontAwesomeIcon icon={faChevronRight} />
+    //       </button>
+    //     </div>
+    //   );
+    // };
 
 {/* <SwiperNavButtons/> */}
 // onMouseEnter={() => setIsHovered(true)} 
