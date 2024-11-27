@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: row;
   padding: 2em 2em;
-  width: 100%;
 }
 .arrow {
   max-width: 35px;
@@ -117,7 +116,7 @@
 .swiper-button-prev:after {
   background: none;
   background-color: none;
-  margin-top: 150px;
+  /* margin-top: 150px; */
   color: black;
 }
 
@@ -149,6 +148,8 @@
   padding: 0;
   margin: 0;
 }
+
+/* check the icon to svg file or sth else S */
 .swiper-pagination-bullets {
   margin-top: 10px; /* Adjust as needed to position closer to the artwork */
   position: absolute; /* Relative to the Swiper container */

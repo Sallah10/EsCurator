@@ -78,7 +78,7 @@ const mainBody = () => {
           <Swiper
                 direction="horizontal"
                 modules={[Navigation, Pagination]} 
-                spaceBetween={50}
+                spaceBetween={30}
                 slidesPerView={3}
                 navigation
                 pagination={{ clickable: true }}
