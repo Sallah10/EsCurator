@@ -149,6 +149,15 @@
   padding: 0;
   margin: 0;
 }
+.swiper-pagination-bullets {
+  margin-top: 10px; /* Adjust as needed to position closer to the artwork */
+  position: absolute; /* Relative to the Swiper container */
+  bottom: 10px; /* Ensure it's placed at the bottom of the Swiper */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10; /* Ensure it stays above the content */
+}
+
 /* !important */
 /* .swiper-pagination-bullet-active {
     opacity: 1;
