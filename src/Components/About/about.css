@@ -1,4 +1,4 @@
-.about {
+/* .about {
   padding: 1.25em 3em;
   display: flex;
   flex-direction: column;
@@ -73,31 +73,6 @@ ul {
   color: slategray;
 }
 
-/* .segments {
-    display: flex;
-    justify-content: space-between;
-  }
-  .segment,
-  .segment1 {
-    margin: 0 auto;
-    align-items: center;
-  }
-  .segment {
-    align-content: center;
-    align-items: center;
-  }
-  .segment, .segment1, h3:hover{
-      color: rgb(30, 185, 185);
-  }
-  .segment1 {
-    margin-right: 2.5em;
-  }
-  .segment2 {
-    display: flex;
-    flex-direction: column;
-    padding: 0rem 30rem;
-    gap: none;
-  } */
 
 @media (max-width: 1070px) {
   ul {
@@ -154,5 +129,152 @@ ul {
   .segment2 p {
     padding: 0 0em;
     text-align: justify;
+  }
+} */
+/* General Styles */
+.about {
+  padding: 2em 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* background: #d0ddd0; */
+  color: #333;
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  animation: fadeIn 1s ease-in-out;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #3498db;
+  margin-bottom: 1em;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  text-align: justify;
+  animation: fadeIn 1.4s ease-in-out;
+}
+
+/* Segments */
+.segments {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3em;
+  margin-top: 2em;
+  width: 100%;
+  max-width: 1100px;
+  animation: fadeInUp 2.5s ease-in-out;
+}
+
+.segment,
+.segment2 {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.5em;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+.segments > h3,
+p,
+ul,
+li,
+.segment2 > h3,
+.segment > h3 {
+  background: none;
+}
+.segment:hover,
+.segment2:hover {
+  transform: translateY(-5px);
+}
+
+.segment h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+.segment p {
+  font-size: 1rem;
+  text-align: justify;
+}
+
+.recommender {
+  color: #16a085;
+  font-weight: bold;
+  padding: 0.2em 0.5em;
+  border-radius: 5px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 0.8em 0;
+  font-size: 1rem;
+}
+
+/* Closure */
+.closure {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: slategray;
+  text-align: center;
+  margin-top: 2em;
+  animation: fadeIn 1.8s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .segments {
+    grid-template-columns: 1fr;
+    gap: 2em;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
