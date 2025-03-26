@@ -129,6 +129,7 @@ import React from "react";
 import "./mainBody.css";
 import { FaHeart, FaBookmark } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { InfinitySpin } from 'react-loader-spinner';
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -222,7 +223,14 @@ const MainBody = () => {
               <SwiperSlide key={artwork.id}>
                 <div className="artwork-Card">
                   {loadingImages[artwork.id] && (
-                    <div className="spinner">Loading...</div>
+                    <div className="spinner">
+                      <InfinitySpin
+                        visible={true}
+                        width="200"
+                        color="#16a085"
+                        ariaLabel="infinity-spin-loading"
+                        />
+                    </div>
                   )}
                   <img
                     src={artwork.art_image}
