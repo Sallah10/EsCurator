@@ -6,7 +6,7 @@ const footer = () => {
     <>
       <div className='footers'>
         <img src={logo} alt="logo" />
-        <h3> &copy; 2024 ESCURATOR</h3>
+        <h3> &copy; 2025 ESCURATOR</h3>
         <h3> Terms and conditon </h3>
       </div>  
     </>
