@@ -22,7 +22,7 @@ const MainBody = () => {
       try {
         setIsLoading(true); // Start loading
         const response = await axios.get(
-          "https://art-reccommendation-api.onrender.com/art_works"
+          "/api/art_works"
         );
         setArtworks(response.data);
       } catch (error) {
@@ -52,7 +52,7 @@ const MainBody = () => {
     };
 
     axios
-      .post("https://art-reccommendation-api.onrender.com/interactions", payload)
+      .post("/api/interactions", payload)
       .then((response) => {
         console.log("Interaction recorded:", response.data);
       })

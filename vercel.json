@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+      {
+        "source": "/api/:path*",
+        "destination": "https://art-reccommendation-api.onrender.com/:path*"
+      }
+    ]
+  }
