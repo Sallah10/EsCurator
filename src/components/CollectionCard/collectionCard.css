@@ -1,0 +1,98 @@
+.collection-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease;
+}
+
+.collection-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-md);
+}
+
+.collection-card__media {
+  position: relative;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  background: var(--accent-color);
+}
+
+.collection-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.collection-card:hover .collection-card__media img {
+  transform: scale(1.05);
+}
+
+.collection-card__fallback {
+  height: 100%;
+  background: linear-gradient(135deg, var(--accent-color), rgba(28, 25, 21, 0.55));
+}
+
+.collection-card__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(246, 241, 231, 0.92);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.collection-card__body {
+  padding: 20px 22px 24px;
+}
+
+.collection-card__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.collection-card__heading h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.45rem;
+  letter-spacing: -0.01em;
+}
+
+.collection-card__heading svg {
+  flex-shrink: 0;
+  color: var(--muted);
+  transition: color 200ms ease, transform 200ms ease;
+}
+
+.collection-card:hover .collection-card__heading svg {
+  color: var(--accent);
+  transform: translate(2px, -2px);
+}
+
+.collection-card__body p {
+  margin-top: 6px;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+.collection-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.collection-card.is-large .collection-card__media {
+  aspect-ratio: 4 / 3;
+}

@@ -1,0 +1,167 @@
+.art-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.art-card__media {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--paper-3);
+  aspect-ratio: 4 / 5;
+}
+
+.art-card__link {
+  display: block;
+  height: 100%;
+}
+
+.art-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1), filter 400ms ease;
+}
+
+.art-card:hover .art-card__media img {
+  transform: scale(1.045);
+}
+
+.art-card__placeholder {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.art-card__veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(28, 25, 21, 0.42));
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.art-card:hover .art-card__veil {
+  opacity: 1;
+}
+
+.art-card__actions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.art-card:hover .art-card__actions,
+.art-card:focus-within .art-card__actions {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.icon-button {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(246, 241, 231, 0.92);
+  color: var(--ink);
+  font-size: 1.02rem;
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow-sm);
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.icon-button:hover {
+  background: var(--ink);
+  color: var(--paper);
+  transform: translateY(-1px);
+}
+
+.icon-button.is-active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.icon-button.is-active svg {
+  fill: currentColor;
+}
+
+.art-card__body {
+  padding-top: 14px;
+}
+
+.art-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.art-card__body h3 {
+  margin-top: 6px;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.32rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.art-card__body h3 a {
+  transition: color 180ms ease;
+}
+
+.art-card__body h3 a:hover {
+  color: var(--accent);
+}
+
+.art-card__artist {
+  margin-top: 2px;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.art-card__stats {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.art-card__stats span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.art-card__medium {
+  margin-left: auto;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+
+@media (hover: none) {
+  .art-card__actions {
+    opacity: 1;
+    transform: none;
+  }
+
+  .art-card__veil {
+    opacity: 1;
+  }
+}
