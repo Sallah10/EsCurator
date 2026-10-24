@@ -160,6 +160,15 @@
   font-size: 0.76rem;
   line-height: 1.45;
   color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+}
+
+.rec-reason-skeleton {
+  height: 12px;
+  width: 72%;
+  margin-bottom: 16px;
+  border-radius: 999px;
 }
 
 .home-featured {

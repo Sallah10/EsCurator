@@ -42,7 +42,7 @@ function Gallery() {
       if (searchInput.trim()) next.set('search', searchInput.trim())
       else next.delete('search')
       setSearchParams(next, { replace: true })
-    }, 350)
+    }, 320)
     return () => window.clearTimeout(timeout)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchInput])
@@ -88,7 +88,7 @@ function Gallery() {
             emptyMessage="No works match that combination yet. Try clearing the search."
           />
 
-          {hasNextPage && (
+          {hasNextPage && total > 80 && (
             <div className="gallery-more">
               <button
                 type="button"
@@ -97,6 +97,19 @@ function Gallery() {
                 disabled={isFetchingNextPage}
               >
                 {isFetchingNextPage ? 'Loading...' : 'Load more works'}
+                <FiArrowDown aria-hidden="true" />
+              </button>
+            </div>
+          )}
+          {hasNextPage && total <= 80 && (
+            <div className="gallery-more">
+              <button
+                type="button"
+                className="btn btn-ghost"
+                onClick={() => fetchNextPage()}
+                disabled={isFetchingNextPage}
+              >
+                {isFetchingNextPage ? 'Loading...' : 'Show more'}
                 <FiArrowDown aria-hidden="true" />
               </button>
             </div>

@@ -77,7 +77,8 @@ function Nav() {
               <button
                 type="button"
                 className="nav-search-clear"
-                onClick={() => {
+                onClick={(event) => {
+                  event.preventDefault()
                   setSearch('')
                   navigate('/gallery')
                 }}

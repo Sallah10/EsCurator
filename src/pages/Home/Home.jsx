@@ -109,7 +109,18 @@ function Home() {
           </div>
 
           {recLoading ? (
-            <ArtworkGrid loading skeletonCount={4} />
+            <div className="rec-grid" aria-busy="true">
+              {Array.from({ length: 4 }).map((_, index) => (
+                <div key={index} className="rec-item">
+                  <div className="skeleton rec-reason-skeleton" />
+                  <div className="grid-skeleton">
+                    <div className="skeleton grid-skeleton__image" />
+                    <div className="skeleton grid-skeleton__line" />
+                    <div className="skeleton grid-skeleton__line short" />
+                  </div>
+                </div>
+              ))}
+            </div>
           ) : (
             <div className="rec-grid">
               {recs.map((artwork) => (

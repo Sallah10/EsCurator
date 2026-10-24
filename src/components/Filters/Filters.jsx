@@ -17,9 +17,9 @@ function Filters({ facets, style, onStyle, search, onSearch, sort, onSort, resul
             placeholder="Search by title, style or period"
           />
           {search && (
-            <button type="button" onClick={() => onSearch('')} aria-label="Clear search">
-              <FiX aria-hidden="true" />
-            </button>
+          <button type="button" className="filters-search-clear" onMouseDown={(event) => event.preventDefault()} onClick={() => onSearch('')} aria-label="Clear search">
+            <FiX aria-hidden="true" />
+          </button>
           )}
         </label>
 

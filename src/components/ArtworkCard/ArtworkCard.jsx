@@ -71,8 +71,15 @@ function ArtworkCard({ artwork }) {
           {artwork.art_image ? (
             <img src={artwork.art_image} alt={artwork.art_title} loading="lazy" />
           ) : (
-            <div className="art-card__placeholder serif">
-              <span className="art-card__placeholder-title">{artwork.art_title}</span>
+            <div className="art-card__placeholder">
+              <img
+                src={artwork.art_image || '/favicon.ico'}
+                alt=""
+                aria-hidden="true"
+                className="art-card__placeholder-bg"
+              />
+              <div className="art-card__placeholder-overlay" aria-hidden="true" />
+              <span className="art-card__placeholder-title serif">{artwork.art_title}</span>
             </div>
           )}
           <span className="art-card__veil" aria-hidden="true" />

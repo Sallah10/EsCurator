@@ -1,4 +1,4 @@
-.site-nav {
+﻿.site-nav {
   position: sticky;
   top: 0;
   z-index: 40;
@@ -233,3 +233,21 @@
     padding: 12px 0;
   }
 }
+
+
+
+.nav-search-clear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  color: var(--muted);
+  flex: 0 0 auto;
+}
+
+.nav-search-clear:hover {
+  color: var(--ink);
+}
+
