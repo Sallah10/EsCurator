@@ -1,0 +1,19 @@
+.not-found {
+  min-height: 62vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 96px 0;
+}
+
+.not-found h1 {
+  margin: 20px 0 18px;
+  max-width: 12ch;
+}
+
+.not-found__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}

@@ -1,57 +1,39 @@
-// import { useState } from 'react'
-import Nav from './Components/Nav/nav'
-import MainBody from './Components/mainBody/mainBody'
-import About from './Components/About/about'
-import Footer from './Components/Footer/footer'
-// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import ArtistProfile from './Components/ArtistProfile/ArtistProfile'
-import './App.css'
+import { Route, Routes } from 'react-router-dom'
+import Nav from './components/Nav/Nav'
+import Footer from './components/Footer/Footer'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
+import Home from './pages/Home/Home'
+import Gallery from './pages/Gallery/Gallery'
+import Collections from './pages/Collections/Collections'
+import CollectionDetail from './pages/Collections/CollectionDetail'
+import ArtworkDetail from './pages/ArtworkDetail/ArtworkDetail'
+import Saved from './pages/Saved/Saved'
+import About from './pages/About/About'
+import NotFound from './pages/NotFound/NotFound'
 
 function App() {
-
   return (
     <>
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
+      <ScrollToTop />
       <Nav />
-      <MainBody/>
-      <About/>
-      <Footer/>
-      {/* <Router>
-        <div className="App">
-          <Nav/>
-          <Routes>
-            <Route path="/" exact component={<MainBody/>} />
-            <Route path="/artist-profile" component={<ArtistProfile/>} /> 
-          </Routes>
-        </div>
-      </Router> */}
-      {/* <ArtistProfile/> */}
+      <main id="main">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/collections" element={<Collections />} />
+          <Route path="/collections/:slug" element={<CollectionDetail />} />
+          <Route path="/artwork/:id" element={<ArtworkDetail />} />
+          <Route path="/saved" element={<Saved />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
+      <Footer />
     </>
   )
 }
 
 export default App
-// Update `App.js` to include routing for the artist bio page:
-
-//    ```jsx
-//    // src/App.js
-//    import React from 'react';
-//    import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-//    import NavBar from './components/NavBar';
-//    import ArtistBio from './components/ArtistBio';
-//    import Home from './components/Home'; // Assuming you have a Home component
-
-//    const App = () => {
-//        return (
-//            <Router>
-//                <div className="App">
-//                    <NavBar />
-//                    <Switch>
-//                        <Route path="/" exact component={Home} />
-//                        <Route path="/artists/:artistId" component={ArtistBio} />
-//                    </Switch>
-//                </div>
-//            </Router>
-//        );
-//    };
-
-//    export default App;

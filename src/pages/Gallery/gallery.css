@@ -1,0 +1,17 @@
+﻿.gallery-grid-wrap {
+  padding-top: 36px;
+}
+
+.gallery-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 56px;
+}
+
+.gallery-end {
+  margin-top: 48px;
+  text-align: center;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}

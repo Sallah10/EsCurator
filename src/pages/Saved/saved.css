@@ -1,0 +1,35 @@
+.saved-tabs {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  margin-bottom: 40px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.saved-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  color: var(--ink-soft);
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.saved-tab span {
+  font-size: 0.68rem;
+  opacity: 0.65;
+}
+
+.saved-tab[aria-selected='true'] {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.saved-empty {
+  margin-top: 16px;
+}
