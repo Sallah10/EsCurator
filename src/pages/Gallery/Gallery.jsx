@@ -62,7 +62,7 @@ function Gallery() {
           <h1>Every work, in one place.</h1>
           <p>
             Filter by style, search by title or period, and sort by what people
-            are responding to. Everything here is real API data.
+            are responding to.
           </p>
         </div>
       </header>

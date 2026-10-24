@@ -1,5 +1,5 @@
 ﻿import { useEffect, useState } from 'react'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useNavigate, useSearchParams } from 'react-router-dom'
 import { FiBookmark, FiMenu, FiSearch, FiX } from 'react-icons/fi'
 import { useInteractions } from '../../api/hooks'
 import './nav.css'
@@ -14,9 +14,14 @@ const links = [
 function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const [search, setSearch] = useState('')
+  const [searchParams] = useSearchParams()
+  const [search, setSearch] = useState(searchParams.get('search') || '')
   const navigate = useNavigate()
   const { data: interactions } = useInteractions()
+
+  useEffect(() => {
+    setSearch(searchParams.get('search') || '')
+  }, [searchParams])
 
   const savedCount = Array.isArray(interactions)
     ? interactions.filter((item) => item.bookmarked).length
@@ -68,6 +73,19 @@ function Nav() {
               placeholder="Search the collection"
               aria-label="Search the collection"
             />
+            {search && (
+              <button
+                type="button"
+                className="nav-search-clear"
+                onClick={() => {
+                  setSearch('')
+                  navigate('/gallery')
+                }}
+                aria-label="Clear search"
+              >
+                <FiX aria-hidden="true" />
+              </button>
+            )}
           </form>
           <Link to="/saved" className="nav-saved" onClick={() => setMenuOpen(false)}>
             <FiBookmark aria-hidden="true" />

@@ -13,8 +13,8 @@ function Collections() {
           <span className="eyebrow">Curated shelves</span>
           <h1>Five ways into the collection.</h1>
           <p>
-            Shelves are grouped by medium, mood and period - not by an
-            algorithm. Use one as a starting point, then follow your own taste.
+            Each shelf brings together works by mood, period and medium. Use one
+            as a starting point, then follow your own taste.
           </p>
         </div>
       </header>

@@ -24,13 +24,13 @@ function Filters({ facets, style, onStyle, search, onSearch, sort, onSort, resul
         </label>
 
         <div className="filters-sort">
-          <label htmlFor="sort">Sort</label>
+          <label htmlFor="sort">Sort by</label>
           <select id="sort" value={sort} onChange={(event) => onSort(event.target.value)}>
-            <option value="art_title">Title A-Z</option>
+            <option value="art_title">Title (A-Z)</option>
             <option value="-likes">Most liked</option>
             <option value="-bookmarks">Most saved</option>
             <option value="-views">Most viewed</option>
-            <option value="-created_at">Recently added</option>
+            <option value="-created_at">Newest first</option>
           </select>
         </div>
       </div>

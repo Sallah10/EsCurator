@@ -81,6 +81,8 @@ export function useRecommendations(limit = 8) {
     queryFn: () =>
       api.post('/recommendations/', { limit }).then((response) => response.data),
     staleTime: 15_000,
+    refetchOnWindowFocus: false,
+    retry: 1,
   })
 }
 

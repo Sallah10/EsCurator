@@ -43,14 +43,14 @@ function Home() {
       <section className="hero">
         <div className="container hero-grid">
           <div className="hero-copy">
-            <span className="eyebrow">A curated way to look</span>
+              <span className="eyebrow">A refined way to discover art</span>
             <h1 className="display">
               Art, curated <em>to your taste.</em>
             </h1>
             <p className="lede">
-              EsCurator is a small gallery that pays attention. Browse the
+              EsCurator is a focused gallery built for slow looking. Browse the
               collection, save what moves you, and get recommendations that
-              explain themselves instead of hiding behind a black box.
+              explain themselves.
             </p>
             <div className="hero-ctas">
               <Link to="/gallery" className="btn btn-primary">
@@ -90,7 +90,7 @@ function Home() {
             </div>
             <div className="hero-chip">
               <span className="hero-chip__dot" aria-hidden="true" />
-              Recommendations explain why
+              Every recommendation tells you why
             </div>
           </div>
         </div>
@@ -178,8 +178,8 @@ function Home() {
               <h2 className="section-title">A recommendation engine you can read.</h2>
             </div>
             <p className="how-note">
-              No account required. Your signals live in this browser and are
-              tied to an anonymous session id.
+              No account required. Your signals stay in this browser and are
+              tied to an anonymous session.
             </p>
           </div>
           <div className="how-grid">

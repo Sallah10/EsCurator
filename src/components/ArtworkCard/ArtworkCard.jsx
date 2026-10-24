@@ -71,7 +71,9 @@ function ArtworkCard({ artwork }) {
           {artwork.art_image ? (
             <img src={artwork.art_image} alt={artwork.art_title} loading="lazy" />
           ) : (
-            <div className="art-card__placeholder serif">No image</div>
+            <div className="art-card__placeholder serif">
+              <span className="art-card__placeholder-title">{artwork.art_title}</span>
+            </div>
           )}
           <span className="art-card__veil" aria-hidden="true" />
         </Link>

@@ -35,7 +35,7 @@ function Saved() {
           <h1>The works you kept.</h1>
           <p>
             Saved and liked works live in this browser. Clear your site data and
-            they will disappear - no account, no server-side profile.
+            they will disappear.
           </p>
         </div>
       </header>

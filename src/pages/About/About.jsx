@@ -35,35 +35,32 @@ function About() {
     <div className="page">
       <header className="page-header about-header">
         <div className="container">
-          <span className="eyebrow">About the project</span>
+          <span className="eyebrow">About EsCurator</span>
           <h1>
-            A final-year project,
+            A gallery built for
             <br />
-            rebuilt like a product.
+            slow discovery.
           </h1>
           <p>
-            EsCurator started as a university project: a React gallery with a
-            Django API and an ambitious idea about recommendations. Years later
-            it has been rebuilt end to end - honest data, a working recommender,
-            tests, and a UI that is not embarrassed to be shown.
+            EsCurator is a focused art discovery tool. Browse a considered
+            catalogue, save what moves you, and let a clear, explainable
+            recommender surface works that fit your taste.
           </p>
         </div>
       </header>
 
       <section className="section container about-story">
         <div className="about-story__copy">
-          <h2 className="section-title">Why rebuild it instead of hiding it?</h2>
+          <h2 className="section-title">Designed for looking, not scrolling.</h2>
           <p>
-            The original code had good bones and a lot of scaffolding: an API
-            that did not run, a recommendation endpoint that referenced a model
-            file that never existed, and a README with the wrong commands. That
-            is not a portfolio piece - it is a warning sign.
+            The goal is restraint: a small catalogue, generous spacing, and just
+            enough information to help you decide what to look at next. Instead
+            of endless feeds, EsCurator nudges you one thoughtful step at a time.
           </p>
           <p>
-            The rebuild keeps the idea and throws away the shortcuts. The
-            catalogue is seeded from the original image archive, the API is
-            covered by tests, and every recommendation carries a reason you can
-            read in the interface.
+            Recommendations are explainable by design. The catalogue is real,
+            the API is tested, and every pick comes with a reason you can act on
+            or ignore.
           </p>
         </div>
         <dl className="about-numbers">
@@ -90,12 +87,12 @@ function About() {
         <div className="container">
           <div className="section-head">
             <div>
-              <span className="eyebrow">Under the hood</span>
+              <span className="eyebrow">How it works</span>
               <h2 className="section-title">An explainable recommender.</h2>
             </div>
             <p className="muted about-signals__note">
-              Weights are configurable through environment variables, so the
-              balance can be tuned without a redeploy of the logic.
+              Weights are configurable, so the balance can be tuned without
+              changing the interface.
             </p>
           </div>
 
@@ -134,22 +131,22 @@ function About() {
         </dl>
 
         <div className="about-notes">
-          <h3>What is deliberately honest</h3>
+          <h3>Notes on the catalogue</h3>
           <ul>
             <li>
-              Artist attribution was not in the source archive, so records say
-              &ldquo;Unattributed&rdquo; instead of guessing.
+              Artist attribution was not present in the source archive, so
+              records say &ldquo;Unattributed&rdquo; rather than guessing.
             </li>
             <li>
-              Style and period labels are demo metadata, editable in the Django
-              admin.
+              Style and period labels are catalogue metadata and can be edited
+              in the admin.
             </li>
             <li>
-              Accounts exist in the API (register, login, logout) but the UI
-              intentionally works without one.
+              The experience works without an account. An auth API is available
+              for sessions that want it.
             </li>
             <li>
-              Media files are served by Django in development; production needs
+              Media is served by the API in development; production should use
               object storage or a reverse proxy for /media.
             </li>
           </ul>
@@ -162,7 +159,7 @@ function About() {
           <h2 className="section-title">Start with one work.</h2>
         </div>
         <Link to="/gallery" className="btn btn-primary">
-          Enter the gallery <FiArrowRight aria-hidden="true" />
+          Start exploring <FiArrowRight aria-hidden="true" />
         </Link>
       </section>
     </div>
